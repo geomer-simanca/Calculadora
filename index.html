@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculadora">
+
+        <div class="pantalla">
+
+            <p class="infor" id="infor"></p>
+            <div class="eliminar">
+                <div class="box2"  id="AC" onclick="eliminarTodo()">AC</div>
+                <div class="box2"  id="eliminar" onclick="eliminarone()"> <img class="eliminarimg" src="https://cdn-icons-png.flaticon.com/512/6337/6337366.png" alt="eliminar"></div>
+            </div>
+
+        </div>
+
+        <div class="teclado">
+
+            <div class="box box1"  id="1" onclick="add1()">1</div>
+            <div class="box box2"  id="2" onclick="add2()">2</div>
+            <div class="box box3"  id="3" onclick="add3()">3</div>
+            <div class="box box4"  id="+" onclick="addplus()">+</div>
+            <div class="box box5"  id="4" onclick="add4()">4</div>
+            <div class="box box6"  id="5" onclick="add5()">5</div>
+            <div class="box box7"  id="6" onclick="add6()">6</div>
+            <div class="box box8"  id="-" onclick="addresta()">-</div>
+            <div class="box box9"  id="7" onclick="add7()">7</div>
+            <div class="box box10"  id="8" onclick="add8()">8</div>
+            <div class="box box11"  id="9" onclick="add9()">9</div>
+            <div class="box box12"  id="*" onclick="addmulti()">x</div>
+            <div class="box box13"  id="." onclick="addpunto()">.</div>
+            <div class="box box14"  id="0" onclick="add0()">0</div>
+            <div class="box box15"  id="=" onclick="igual()">=</div>
+            <div class="box box16"  id="/" onclick="adddiv()">/</div>
+            
+
+
+
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -159,7 +159,7 @@ const addplus= () => {
 
 const addresta= () => {
     
-    if (informacionAlmacenada[informacionAlmacenada.length-1] == "."  || (informacionAlmacenada.endsWith("-") && informacionAlmacenada[informacionAlmacenada.length - 2] === "-") || informacionAlmacenada === "-") {
+    if (informacionAlmacenada[informacionAlmacenada.length-1] == "."  || (informacionAlmacenada[informacionAlmacenada.length-1] == "-" && informacionAlmacenada[informacionAlmacenada.length - 2] === "-") || informacionAlmacenada === "-") {
         alert("Opcion Invalida");
     } else{
         informacionAlmacenada += "-"
@@ -236,15 +236,46 @@ const igual = () => {
         if (informacionAlmacenada[i] == "+" || informacionAlmacenada[i] == "-" || informacionAlmacenada[i] == "*" || informacionAlmacenada[i] == "/") {
             
             if (informacionAlmacenada[i] == "-"){
-                if(informacionAlmacenada[i+1] == "-"){
+
+                if(informacionAlmacenada[i+1] == "-" ){
 
                     expresion.push(valtemp);
                     valtemp = "";
                     expresion.push(informacionAlmacenada[i]);
 
-                }else if (informacionAlmacenada[i+1] != "+" || informacionAlmacenada[i+1] != "-" || informacionAlmacenada[i+1] != "*" || informacionAlmacenada[i+1] != "/"){
-                    valtemp += informacionAlmacenada[i];
+                }else if (informacionAlmacenada[i+1] != "-" ){
+
+                    if (expresion[expresion.length-1] == "-"){
+                        valtemp += informacionAlmacenada[i];
+
+                    }else{
+
+                        if (expresion.length == 0 && valtemp == ""){
+                            
+                            valtemp += informacionAlmacenada[i];
+                        }else{
+                            if ( expresion[expresion.length-1] == "*" || expresion[expresion.length-1] == "/" || expresion[expresion.length-1] == "+" ){
+                                valtemp += informacionAlmacenada[i];
+
+                            }else{
+                                expresion.push(valtemp);
+                                expresion.push(informacionAlmacenada[i]);
+                                valtemp = "";
+                                // valtemp += informacionAlmacenada[i];
+                                console.log("entre",valtemp);
+
+                            }
+                            
+
+                        }
+                        
+
+                    }
+                    
                 }
+
+
+
             }else{
                 expresion.push(valtemp);
             

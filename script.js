@@ -324,9 +324,20 @@ const igual = () => {
     }
     
     console.log("Resultado final:", resultadoFinal);
+    console.log("Resultado final:", resultadoFinal.toString().length);
 
-    informacionAlmacenada = resultadoFinal;
-    informacionPantalla.textContent = resultadoFinal;
+    if (resultadoFinal.toString().length > 10){
+        informacionAlmacenada = resultadoFinal.toString().slice(0, 6)+resultadoFinal.toString().slice(-4);
+        informacionPantalla.textContent = informacionAlmacenada;
+    }else{
+        informacionAlmacenada = resultadoFinal;
+        informacionPantalla.textContent = resultadoFinal;
+
+    }
+
+    
+
+    
 
         
 }
